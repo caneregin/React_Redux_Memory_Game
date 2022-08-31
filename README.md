@@ -1,5 +1,9 @@
 # React Redux Memory Game
-## Yayınlandı: https://630f257540bedd7679cf76e9--jazzy-kataifi-f9b2dc.netlify.app/
+## Yayınlandı: https://630f2db49cd8e45203394d88--jazzy-kataifi-f9b2dc.netlify.app/
+
+## Ekran görüntüsü
+![memory10](https://user-images.githubusercontent.com/36435160/187650975-5e76646c-76d0-4e69-bd33-47eac7605c3e.png)
+
 
 ## useSelector items ile tüm kart değerleri, totalPoint ile toplam puan, isFinish ile oyun bitmesi kontrolü çekilmiştir. İlk ve ikinci tıklama useState olarak verilmiştir. Eğer ilk tıklama ve ikinci tıklama varsa 2 tıklanan resimin id kullanılarak src'si kontrol edilip redux check ile karşılanmak üzere dispatch ile gönderilir. Eğer 2 resim uyuyorsa eşleşir ve resimler açık kalır 50 puan eklenir. Eşleşmez ise yarım saniye sonra iki resim kapanır. handleChoice kontrolü ile firstClick varsa secondClick içerisine card bilgisi yazılır yoksa firstclick içerisine card bilgisi yazılır.
 ![memory1](https://user-images.githubusercontent.com/36435160/187645605-60754f09-6d66-4b32-9f0d-6611214e0a2d.png)
