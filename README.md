@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+# React Redux Memory Game
+## Yayınlandı: https://630f257540bedd7679cf76e9--jazzy-kataifi-f9b2dc.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## useSelector items ile tüm kart değerleri, totalPoint ile toplam puan, isFinish ile oyun bitmesi kontrolü çekilmiştir. İlk ve ikinci tıklama useState olarak verilmiştir. Eğer ilk tıklama ve ikinci tıklama varsa 2 tıklanan resimin id kullanılarak src'si kontrol edilip redux check ile karşılanmak üzere dispatch ile gönderilir. Eğer 2 resim uyuyorsa eşleşir ve resimler açık kalır 50 puan eklenir. Eşleşmez ise yarım saniye sonra iki resim kapanır. handleChoice kontrolü ile firstClick varsa secondClick içerisine card bilgisi yazılır yoksa firstclick içerisine card bilgisi yazılır.
+![memory1](https://user-images.githubusercontent.com/36435160/187645605-60754f09-6d66-4b32-9f0d-6611214e0a2d.png)
 
-## Available Scripts
+## shuffleCards ile oyun her açıldığında ve oyun bitip tekrar oynandığında kartlar karıştırılır. Kart karıştırması dispatch ile redux shuffleData olarak karşılanır. trigger ile açılan kartlar sayılır. Tüm kartlar açıldığında dispatch ile redux finishGame karşılanır. map ile tüm cardlar listelenir.
+![memory2](https://user-images.githubusercontent.com/36435160/187646151-8cd1a192-46ab-401c-95fd-6d615890b179.png)
 
-In the project directory, you can run:
+## Card componentine card, flipped, handlechoice prop olarak geçilir. Eğer flipped var ise flipped stili yoksa boş stil verilir. Cart ön ve arkası olarak 2 image vardır. Cart önü image source'a göre gelir. Card arkası sabittir ve tıklanma burada gerçekleşir. Tıklandığında kart rotate ile döner
+![memory3](https://user-images.githubusercontent.com/36435160/187646668-7d45b9c9-518e-4d00-a856-ef55de170a33.png)
 
-### `npm start`
+## initial state items tüm resimlerin id src matched değerleri verilmiştir.
+![memory8](https://user-images.githubusercontent.com/36435160/187647630-c7e1a169-16c0-4742-a8a6-5d3e2f6cca09.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## reducer check kullanımında tıklanan resim ile tüm resimlerdeki id karşılaştırılıp bulunur. İlgili resimin matched true olarak değiştirilir. Böylece resim gösterilirken artık resimin ön yüzü gösterilecektir. 2 resim olduğundan 25er puandan toplam 50puan eklenir. finish değeri 1 artar ve 30 olduğundan oyun bittiği anlaşılır tekrar oyna butona açığa çıkar. checkFalse eşlenmeme durumudur ve ilgili resimin matched false olarak döner.
+![memory8](https://user-images.githubusercontent.com/36435160/187648371-05a19b85-c164-4e74-b439-d82735043192.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## decreasePoint başarısız eşleşmelerde 10 puan toplam puandan düşer. shuffleData resimleri karıştırır. finishGame Toplam puanı ve bitiş sayacını sıfırlar.
+![memory9](https://user-images.githubusercontent.com/36435160/187648677-02bdb3a5-8c9a-4abd-a064-3848021658f7.png)
