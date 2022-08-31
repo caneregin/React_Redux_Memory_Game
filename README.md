@@ -11,7 +11,7 @@
 ![memory3](https://user-images.githubusercontent.com/36435160/187646668-7d45b9c9-518e-4d00-a856-ef55de170a33.png)
 
 ## initial state items tüm resimlerin id src matched değerleri verilmiştir.
-![memory8](https://user-images.githubusercontent.com/36435160/187647630-c7e1a169-16c0-4742-a8a6-5d3e2f6cca09.png)
+![memory7](https://user-images.githubusercontent.com/36435160/187649173-ffe10f82-ab5d-4479-a962-07df95c475a2.png)
 
 ## reducer check kullanımında tıklanan resim ile tüm resimlerdeki id karşılaştırılıp bulunur. İlgili resimin matched true olarak değiştirilir. Böylece resim gösterilirken artık resimin ön yüzü gösterilecektir. 2 resim olduğundan 25er puandan toplam 50puan eklenir. finish değeri 1 artar ve 30 olduğundan oyun bittiği anlaşılır tekrar oyna butona açığa çıkar. checkFalse eşlenmeme durumudur ve ilgili resimin matched false olarak döner.
 ![memory8](https://user-images.githubusercontent.com/36435160/187648371-05a19b85-c164-4e74-b439-d82735043192.png)
